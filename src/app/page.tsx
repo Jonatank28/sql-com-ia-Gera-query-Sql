@@ -30,7 +30,7 @@ export default function Home() {
                         onSubmit={handleSubmit}
                         className="flex flex-col gap-4"
                     >
-                        {/* <label>Cole seu código SQL aqui</label>
+                        <label>Mais informações</label>
                         <Editor
                             textareaId="schema"
                             value={schema}
@@ -39,9 +39,8 @@ export default function Home() {
                                 highlight(code, languages.sql, 'sql')
                             }
                             padding={16}
-                            textareaClassName="outline-none"
-                            className="bg-[#151a2a] h-56 rounded-md p-2 border outline-none focus:ring-1 focus:ring-[#2dff0b] font-mono"
-                        /> */}
+                            className="bg-[#151a2a] h-20 rounded-md p-2 border outline-none focus:ring-1 focus:ring-[#2dff0b] font-mono"
+                        />
 
                         <label>Faça uma pergunta sobre o código:</label>
                         <textarea
