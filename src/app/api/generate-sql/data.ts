@@ -1,3 +1,6 @@
+import { ACTION } from 'next/dist/client/components/app-router-headers'
+import { text } from 'stream/consumers'
+
 export const data = `
 CREATE TABLE 'alternativa' (
   'alternativaID' int(11) NOT NULL,
@@ -516,4 +519,280 @@ CREATE TABLE 'usuario_unidade_cargo' (
   'usuarioUnidadeID' int(11) NOT NULL,
   'cargoID' int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+ALTER TABLE'alternativa'
+  MODIFY'alternativaID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE'alternativa_item'
+  MODIFY'alternativaItemID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE'anexo'
+  MODIFY'anexoID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'apresentacao'
+  MODIFY'apresentacaoID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE'atividade'
+  MODIFY'atividadeID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE'cargo'
+  MODIFY'cargoID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE'categoria'
+  MODIFY'categoriaID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE'divisor'
+  MODIFY'divisorID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE'extensao'
+  MODIFY'extensaoID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'fabrica_fornecedor'
+  MODIFY'fabricaFornecedorID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE'fabrica_fornecedor_grupoanexo'
+  MODIFY'fabricaFornecedorGrupoAnexoID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'fornecedor'
+  MODIFY'fornecedorID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE'fornecedor_atividade'
+  MODIFY'fornecedorAtividadeID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'fornecedor_categoria'
+  MODIFY'fornecedorCategoriaID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'fornecedor_resposta'
+  MODIFY'fornecedorRespostaID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'fornecedor_sistemaqualidade'
+  MODIFY'fornecedorSistemaQualidadeID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'grupoanexo'
+  MODIFY'grupoanexoID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE'grupoanexo_item'
+  MODIFY'grupoanexoitemID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE'grupoanexo_parformulario'
+  MODIFY'grupoanexoParformularioID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE'item'
+  MODIFY'itemID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE'menu'
+  MODIFY'menuID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+ALTER TABLE'movimentacaoformulario'
+  MODIFY'movimentacaoFormularioID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE'papel'
+  MODIFY'papelID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE'par_formulario'
+  MODIFY'parFormularioID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE'par_fornecedor'
+  MODIFY'parFornecedorID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+ALTER TABLE'par_fornecedor_bloco'
+  MODIFY'parFornecedorBlocoID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE'par_fornecedor_bloco_atividade'
+  MODIFY'parFornecedorBlocoAtividadeID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE'par_fornecedor_bloco_categoria'
+  MODIFY'parFornecedorBlocoCategoriaID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+ALTER TABLE'par_fornecedor_bloco_item'
+  MODIFY'parFornecedorBlocoItemID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE'par_fornecedor_bloco_item_pontuacao'
+  MODIFY'parFornecedorBlocoItemPontuacaoID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'par_fornecedor_unidade'
+  MODIFY'parFornecedorUnidadeID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE'par_recebimentomp'
+  MODIFY'parRecebimentompID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE'par_recebimentomp_bloco'
+  MODIFY'parRecebimentompBlocoID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE'par_recebimentomp_bloco_item'
+  MODIFY'parRecebimentompBlocoItemID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+ALTER TABLE'par_recebimentomp_naoconformidade'
+  MODIFY'parRecebimentompNaoconformidadeID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE'par_recebimentomp_naoconformidade_bloco'
+  MODIFY'parRecebimentompNaoconformidadeBlocoID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'par_recebimentomp_naoconformidade_bloco_item'
+  MODIFY'parRecebimentompNaoconformidadeBlocoItemID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'par_recebimentomp_naoconformidade_unidade'
+  MODIFY'parRecebimentompNaoconformidadeUnidadeID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'par_recebimentomp_produto'
+  MODIFY'parRecebimentompProdutoID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE'par_recebimentomp_produto_unidade'
+  MODIFY'parRecebimentompProdutoUnidadeID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
+ALTER TABLE'par_recebimentomp_unidade'
+  MODIFY'parRecebimentompUnidadeID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+ALTER TABLE'permissao'
+  MODIFY'permissaoID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'pessoa'
+  MODIFY'pessoaID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE'produto'
+  MODIFY'produtoID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE'profissao'
+  MODIFY'profissaoID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'recebimentomp'
+  MODIFY'recebimentompID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'recebimentomp_naoconformidade'
+  MODIFY'recebimentompNaoconformidadeID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'recebimentomp_naoconformidade_resposta'
+  MODIFY'recebimentompNaoconformidadeRespostaID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'recebimentomp_produto'
+  MODIFY'recebimentompProdutoID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'recebimentomp_resposta'
+  MODIFY'recebimentompRespostaID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'registroestabelecimento'
+  MODIFY'registroEstabelecimentoID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'sistemaqualidade'
+  MODIFY'sistemaQualidadeID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE'submenu'
+  MODIFY'submenuID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+ALTER TABLE'tiponaoconformidade'
+  MODIFY'tipoNaoconformidadeID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'tipooperacao'
+  MODIFY'tipooperacaoID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE'tipoveiculo'
+  MODIFY'tipoVeiculoID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE'transportador'
+  MODIFY'transportadorID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE'unidade'
+  MODIFY'unidadeID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+ALTER TABLE'unidade_extensao'
+  MODIFY'unidadeExtensaoID' int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE'usuario'
+  MODIFY'usuarioID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE'usuario_unidade'
+  MODIFY'usuarioUnidadeID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE'usuario_unidade_cargo'
+  MODIFY'usuarioUnidadeCargoID' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE'alternativa_item'
+  ADD CONSTRAINT'FK_alternativa_item_alternativa_alternativaID' FOREIGN KEY ('alternativaID') REFERENCES'alternativa' ('alternativaID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'anexo'
+  ADD CONSTRAINT'FK_anexo_fornecedor_fornecedorID' FOREIGN KEY ('fornecedorID') REFERENCES'fornecedor' ('fornecedorID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_anexo_grupoanexo_item_grupoanexoitemID' FOREIGN KEY ('grupoAnexoItemID') REFERENCES'grupoanexo_item' ('grupoanexoitemID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_anexo_recebimentomp_recebimentompID' FOREIGN KEY ('recebimentoMpID') REFERENCES'recebimentomp' ('recebimentompID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_anexo_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_anexo_usuario_usuarioID' FOREIGN KEY ('usuarioID') REFERENCES'usuario' ('usuarioID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'divisor'
+  ADD CONSTRAINT'FK_divisor_papel_papelID' FOREIGN KEY ('papelID') REFERENCES'papel' ('papelID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'fabrica_fornecedor'
+  ADD CONSTRAINT'FK_fabrica_fornecedor_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'fabrica_fornecedor_grupoanexo'
+  ADD CONSTRAINT'FK_fabrica_fo_fabricaFornecedorID' FOREIGN KEY ('fabricaFornecedorID') REFERENCES'fabrica_fornecedor' ('fabricaFornecedorID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_fabrica_fornecedor_grupoanexo_grupoanexo_grupoanexoID' FOREIGN KEY ('grupoAnexoID') REFERENCES'grupoanexo' ('grupoanexoID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'fornecedor'
+  ADD CONSTRAINT'FK_fornecedor_registroestabelecimento_registroEstabelecimentoID' FOREIGN KEY ('registroEstabelecimentoID') REFERENCES'registroestabelecimento' ('registroEstabelecimentoID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_fornecedor_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'fornecedor_atividade'
+  ADD CONSTRAINT'FK_fornecedor_atividade_atividade_atividadeID' FOREIGN KEY ('atividadeID') REFERENCES'atividade' ('atividadeID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_fornecedor_atividade_fornecedor_fornecedorID' FOREIGN KEY ('fornecedorID') REFERENCES'fornecedor' ('fornecedorID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'fornecedor_categoria'
+  ADD CONSTRAINT'FK_fornecedor_categoria_categoria_categoriaID' FOREIGN KEY ('categoriaID') REFERENCES'categoria' ('categoriaID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_fornecedor_categoria_fornecedor_fornecedorID' FOREIGN KEY ('fornecedorID') REFERENCES'fornecedor' ('fornecedorID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'fornecedor_resposta'
+  ADD CONSTRAINT'FK_fornecedor_resposta_fornecedor_fornecedorID' FOREIGN KEY ('fornecedorID') REFERENCES'fornecedor' ('fornecedorID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_fornecedor_resposta_item_itemID' FOREIGN KEY ('itemID') REFERENCES'item' ('itemID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_fornecedor_resposta_par_fornecedor_bloco_parFornecedorBlocoID' FOREIGN KEY ('parFornecedorBlocoID') REFERENCES'par_fornecedor_bloco' ('parFornecedorBlocoID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'fornecedor_sistemaqualidade'
+  ADD CONSTRAINT'FK_fornecedo_sistemaqualidade_sistemaQualidadeID' FOREIGN KEY ('sistemaQualidadeID') REFERENCES'sistemaqualidade' ('sistemaQualidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_fornecedor_sistemaqualidade_par_fornecedor_parFornecedorID' FOREIGN KEY ('fornecedorID') REFERENCES'par_fornecedor' ('parFornecedorID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'grupoanexo'
+  ADD CONSTRAINT'FK_grupoanexo_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'grupoanexo_item'
+  ADD CONSTRAINT'FK_grupoanexo_item_grupoanexo_grupoanexoID' FOREIGN KEY ('grupoanexoID') REFERENCES'grupoanexo' ('grupoanexoID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'grupoanexo_parformulario'
+  ADD CONSTRAINT'FK_grupoanexo_parformulario_grupoanexo_grupoanexoID' FOREIGN KEY ('grupoAnexoID') REFERENCES'grupoanexo' ('grupoanexoID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_grupoanexo_parformulario_par_formulario_parFormularioID' FOREIGN KEY ('parFormularioID') REFERENCES'par_formulario' ('parFormularioID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'item'
+  ADD CONSTRAINT'FK_item_par_formulario_parFormularioID' FOREIGN KEY ('parFormularioID') REFERENCES'par_formulario' ('parFormularioID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'menu'
+  ADD CONSTRAINT'FK_menu_divisor_divisorID' FOREIGN KEY ('divisorID') REFERENCES'divisor' ('divisorID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'movimentacaoformulario'
+  ADD CONSTRAINT'FK_movimentacaoformulario_papel_papelID' FOREIGN KEY ('papelID') REFERENCES'papel' ('papelID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_movimentacaoformulario_par_formulario_parFormularioID' FOREIGN KEY ('parFormularioID') REFERENCES'par_formulario' ('parFormularioID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_movimentacaoformulario_par_fornecedor_parFornecedorID' FOREIGN KEY ('id') REFERENCES'par_fornecedor' ('parFornecedorID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_movimentacaoformulario_par_recebimentomp_parRecebimentompID' FOREIGN KEY ('id') REFERENCES'par_recebimentomp' ('parRecebimentompID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_movimentacaoformulario_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_movimentacaoformulario_usuario_usuarioID' FOREIGN KEY ('usuarioID') REFERENCES'usuario' ('usuarioID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'par_fornecedor_bloco'
+  ADD CONSTRAINT'FK_par_fornecedor_bloco_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'par_fornecedor_bloco_atividade'
+  ADD CONSTRAINT'FK_par_fornecedor_bloco_ativid' FOREIGN KEY ('parFornecedorBlocoID') REFERENCES'par_fornecedor_bloco' ('parFornecedorBlocoID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_par_fornecedor_bloco_atividade_atividade_atividadeID' FOREIGN KEY ('atividadeID') REFERENCES'atividade' ('atividadeID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_par_fornecedor_bloco_atividade_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'par_fornecedor_bloco_categoria'
+  ADD CONSTRAINT'FK_par_fornecedopar_fornecedor_bloco_parFornecedorBlocoID' FOREIGN KEY ('parFornecedorBlocoID') REFERENCES'par_fornecedor_bloco' ('parFornecedorBlocoID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_par_fornecedor_bloco_categoria_categoria_categoriaID' FOREIGN KEY ('categoriaID') REFERENCES'categoria' ('categoriaID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_par_fornecedor_bloco_categoria_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'par_fornecedor_bloco_item'
+  ADD CONSTRAINT'FK_par_fornecedor_bloco_ite' FOREIGN KEY ('parFornecedorBlocoID') REFERENCES'par_fornecedor_bloco' ('parFornecedorBlocoID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_par_fornecedor_bloco_item_alternativa_alternativaID' FOREIGN KEY ('alternativaID') REFERENCES'alternativa' ('alternativaID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_par_fornecedor_bloco_item_item_itemID' FOREIGN KEY ('itemID') REFERENCES'item' ('itemID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'par_fornecedor_bloco_item_pontuacao'
+  ADD CONSTRAINT'FK_par_fornecedor_bloco_item_parFornecedorBlocoItemID' FOREIGN KEY ('parFornecedorBlocoItemID') REFERENCES'par_fornecedor_bloco_item' ('parFornecedorBlocoItemID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_par_fornecedor_bloco_item_pontuacao_alternativa_alternativaID' FOREIGN KEY ('alternativaID') REFERENCES'alternativa' ('alternativaID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_par_pontuacao_alternativa_item_alternativaItemID' FOREIGN KEY ('alternativaItemID') REFERENCES'alternativa_item' ('alternativaItemID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'par_fornecedor_unidade'
+  ADD CONSTRAINT'FK_par_fornecedor_unidade' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_par_fornecedor_unidade_par_fornecedor_parFornecedorID' FOREIGN KEY ('parFornecedorID') REFERENCES'par_fornecedor' ('parFornecedorID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'par_recebimentomp_bloco'
+  ADD CONSTRAINT'FK_par_recebimentomp_bloco_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'fk_parRecebimentompBlocoID' FOREIGN KEY ('parRecebimentompBlocoID') REFERENCES'recebimentomp_resposta' ('parRecebimentompBlocoID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'par_recebimentomp_bloco_item'
+  ADD CONSTRAINT'FK_ar_recrRecebimentompBlocoID' FOREIGN KEY ('parRecebimentompBlocoID') REFERENCES'par_recebimentomp_bloco' ('parRecebimentompBlocoID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_par_recebimentomp_bloco_item_alternativa_alternativaID' FOREIGN KEY ('alternativaID') REFERENCES'alternativa' ('alternativaID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_par_recebimentomp_bloco_item_item_itemID' FOREIGN KEY ('itemID') REFERENCES'item' ('itemID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'par_recebimentomp_naoconformidade_bloco'
+  ADD CONSTRAINT'FK_par_recebimentomp_naoconformidade_bloco_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'par_recebimentomp_naoconformidade_bloco_item'
+  ADD CONSTRAINT'FK_par_recebimentomp_naoconformidade_bloco_item_item_itemID' FOREIGN KEY ('itemID') REFERENCES'item' ('itemID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_precebinformidadecebimentompNaoconformidadeBlocoID' FOREIGN KEY ('parRecebimentompNaoconformidadeBlocoID') REFERENCES'par_recebimentomp_naoconformidade_bloco' ('parRecebimentompNaoconformidadeBlocoID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'par_recebimentomp_naoconformidade_unidade'
+  ADD CONSTRAINT'FK_par_nformentompNaoconformidadeID' FOREIGN KEY ('parRecebimentompNaoconformidadeID') REFERENCES'par_recebimentomp_naoconformidade' ('parRecebimentompNaoconformidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_par_recebimentomp_naoconformidade_unidade_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'par_recebimentomp_produto_unidade'
+  ADD CONSTRAINT'FK_par_r_produto_parRecebimentompProdutoID' FOREIGN KEY ('parRecebimentompProdutoID') REFERENCES'par_recebimentomp_produto' ('parRecebimentompProdutoID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_par_recebimentomp_produto_unidade_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'par_recebimentomp_unidade'
+  ADD CONSTRAINT'FK_par_recebimenr_recebimentomp_parRecebimentompID' FOREIGN KEY ('parRecebimentompID') REFERENCES'par_recebimentomp' ('parRecebimentompID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_par_recebimentomp_unidade_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'permissao'
+  ADD CONSTRAINT'FK_permissao_papel_papelID' FOREIGN KEY ('papelID') REFERENCES'papel' ('papelID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_permissao_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_permissao_usuario_usuarioID' FOREIGN KEY ('usuarioID') REFERENCES'usuario' ('usuarioID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'pessoa'
+  ADD CONSTRAINT'pessoa_ibfk_1' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID');
+ALTER TABLE'produto'
+  ADD CONSTRAINT'FK_produto_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'produto_ibfk_1' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'profissao'
+  ADD CONSTRAINT'FK_profissao_usuario_unidade_profissaoID' FOREIGN KEY ('profissaoID') REFERENCES'usuario_unidade' ('profissaoID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'recebimentomp'
+  ADD CONSTRAINT'FK_recebimentomp_fornecedor_fornecedorID' FOREIGN KEY ('fornecedorID') REFERENCES'fornecedor' ('fornecedorID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_recebimentomp_pessoa_pessoaID' FOREIGN KEY ('pessoaID') REFERENCES'pessoa' ('pessoaID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_recebimentomp_tipooperacao_tipooperacaoID' FOREIGN KEY ('tipoOperacaoID') REFERENCES'tipooperacao' ('tipooperacaoID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_recebimentomp_tipoveiculo_tipoVeiculoID' FOREIGN KEY ('tipoVeiculoID') REFERENCES'tipoveiculo' ('tipoVeiculoID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_recebimentomp_transportador_transportadorID' FOREIGN KEY ('transportadorID') REFERENCES'transportador' ('transportadorID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_recebimentomp_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'recebimentomp_naoconformidade'
+  ADD CONSTRAINT'FK_midaddadeID' FOREIGN KEY ('tipoNaoconformidadeID') REFERENCES'tiponaoconformidade' ('tipoNaoconformidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_recebimentomp_naoconformidade_fornecedor_fornecedorID' FOREIGN KEY ('fornecedorID') REFERENCES'fornecedor' ('fornecedorID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_recebimentomp_naoconformidade_produto_produtoID' FOREIGN KEY ('produtoID') REFERENCES'produto' ('produtoID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_recebimentomp_naoconformidade_recebimentomp_recebimentompID' FOREIGN KEY ('recebimentompID') REFERENCES'recebimentomp' ('recebimentompID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_recebimentomp_naoconformidade_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'recebimentomp_naoconformidade_resposta'
+  ADD CONSTRAINT'FK_recebimecntompNaoconformidadeID' FOREIGN KEY ('recebimentompNaoconformidadeID') REFERENCES'recebimentomp_naoconformidade' ('recebimentompNaoconformidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_recebimentomp_naoconformidade_resposta_item_itemID' FOREIGN KEY ('itemID') REFERENCES'item' ('itemID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_remidcerRecebimentompNaoconformidadeBlocoID' FOREIGN KEY ('parRecebimentompNaoconformidadeBlocoID') REFERENCES'par_recebimentomp_naoconformidade_bloco' ('parRecebimentompNaoconformidadeBlocoID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'recebimentomp_produto'
+  ADD CONSTRAINT'FK_recebimentomp_produto_apresentacao_apresentacaoID' FOREIGN KEY ('apresentacaoID') REFERENCES'apresentacao' ('apresentacaoID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_recebimentomp_produto_atividade_atividadeID' FOREIGN KEY ('atividadeID') REFERENCES'atividade' ('atividadeID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_recebimentomp_produto_produto_produtoID' FOREIGN KEY ('produtoID') REFERENCES'produto' ('produtoID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_recebimentomp_produto_recebimentomp_recebimentompID' FOREIGN KEY ('recebimentompID') REFERENCES'recebimentomp' ('recebimentompID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'recebimentomp_resposta'
+  ADD CONSTRAINT'FK_recebimentomp_resposta_alternativa_item_alternativaItemID' FOREIGN KEY ('respostaID') REFERENCES'alternativa_item' ('alternativaItemID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_recebimentomp_resposta_item_itemID' FOREIGN KEY ('itemID') REFERENCES'item' ('itemID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_recebimentomp_resposta_recebimentomp_recebimentompID' FOREIGN KEY ('recebimentompID') REFERENCES'recebimentomp' ('recebimentompID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_recebimentompbLOCOiTEM' FOREIGN KEY ('parRecebimentompBlocoID') REFERENCES'par_recebimentomp_bloco' ('parRecebimentompBlocoID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'submenu'
+  ADD CONSTRAINT'FK_submenu_menu_menuID' FOREIGN KEY ('menuID') REFERENCES'menu' ('menuID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'transportador'
+  ADD CONSTRAINT'FK_transportador_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'transportador_ibfk_1' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'unidade'
+  ADD CONSTRAINT'FK_unidade_usuario_unidade_usuarioUnidadeID' FOREIGN KEY ('unidadeID') REFERENCES'usuario_unidade' ('usuarioUnidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'unidade_extensao'
+  ADD CONSTRAINT'FK_unidade_extensao_extensao_extensaoID' FOREIGN KEY ('extensaoID') REFERENCES'extensao' ('extensaoID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_unidade_extensao_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'usuario_unidade'
+  ADD CONSTRAINT'FK_usuario_unidade_papel_papelID' FOREIGN KEY ('papelID') REFERENCES'papel' ('papelID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_usuario_unidade_profissao_profissaoID' FOREIGN KEY ('profissaoID') REFERENCES'profissao' ('profissaoID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_usuario_unidade_unidade_unidadeID' FOREIGN KEY ('unidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_usuario_unidade_usuario_usuarioID' FOREIGN KEY ('usuarioID') REFERENCES'usuario' ('usuarioID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'usuario_unidade_ibfk_1' FOREIGN KEY ('usuarioID') REFERENCES'usuario' ('usuarioID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE'usuario_unidade_cargo'
+  ADD CONSTRAINT'FK_usuario_unidade_cargo_cargo_cargoID' FOREIGN KEY ('cargoID') REFERENCES'cargo' ('cargoID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'FK_usuario_unidade_cargo_unidade_unidadeID' FOREIGN KEY ('usuarioUnidadeID') REFERENCES'unidade' ('unidadeID') ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT'cargoID' FOREIGN KEY ('cargoID') REFERENCES'cargo' ('cargoID') ON DELETE NO ACTION ON UPDATE NO ACTION;
+COMMIT;
 `

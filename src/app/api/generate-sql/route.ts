@@ -40,7 +40,8 @@ export async function POST(req: Request) {
     ${schema}
     """
 
-    Considere usar os dados do arquivo ${cachedData} também
+    Considere usar os dados do arquivo ${cachedData}, 
+    considere usar as chaves extrangeiras do arquivo cachedData
 
     A partir do schema acima, escreva uma query SQL a partir da solicitação abaixo:
     Me retorne somente o código SQL, nada além.
