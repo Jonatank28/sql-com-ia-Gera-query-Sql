@@ -7,7 +7,8 @@ import { data } from './data'
 export const runtime = 'edge'
 
 const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY!,
+    // apiKey: process.env.OPENAI_API_KEY!,
+     apiKey: '434554hjnnjkrgnjklnmfglng'
 })
 
 // Declare a variable to store the cached data
